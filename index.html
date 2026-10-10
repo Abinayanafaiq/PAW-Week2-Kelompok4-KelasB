@@ -4,376 +4,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatGPT dalam Pendidikan Tinggi</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: "Segoe UI", Arial, sans-serif;
-            line-height: 1.6;
-            color: #2d3748;
-            background-color: #f4f6f9;
-        }
-
-        header {
-            background: linear-gradient(135deg, #1e3a5f, #2c5282);
-            color: #ffffff;
-            text-align: center;
-            padding: 2.5rem 1rem;
-        }
-
-        header h1 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        header p {
-            color: #cbd5e0;
-        }
-
-        nav {
-            background-color: #16304f;
-            position: sticky;
-            top: 0;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            display: block;
-            color: #e2e8f0;
-            text-decoration: none;
-            padding: 0.75rem 1.25rem;
-            transition: background-color 0.2s ease;
-        }
-
-        nav a:hover {
-            background-color: #2c5282;
-            color: #ffffff;
-        }
-
-        main {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        section {
-            background-color: #ffffff;
-            border-radius: 8px;
-            padding: 1.5rem 2rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-        }
-
-        section h2 {
-            color: #1e3a5f;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        section h3 {
-            color: #2c5282;
-            margin-bottom: 0.75rem;
-        }
-
-        article p {
-            margin-bottom: 0.75rem;
-        }
-
-        article ul,
-        article ol {
-            padding-left: 1.5rem;
-        }
-
-        article li {
-            margin-bottom: 0.5rem;
-        }
-
-        aside {
-            background-color: #edf2f7;
-            border-left: 4px solid #2c5282;
-            border-radius: 4px;
-            padding: 1rem 1.25rem;
-            margin-top: 1rem;
-        }
-
-        aside h3 {
-            margin-bottom: 0.5rem;
-        }
-
-        a {
-            color: #2b6cb0;
-        }
-
-        a:hover {
-            color: #1e3a5f;
-        }
-
-        footer {
-            background-color: #16304f;
-            color: #cbd5e0;
-            text-align: center;
-            padding: 1.5rem 1rem;
-        }
-
-        footer p {
-            margin-bottom: 0.25rem;
-        }
-    </style>
+    <title>Beranda - EduAI Review | ChatGPT dalam Pendidikan Tinggi</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header>
-        <h1>ChatGPT dalam Pendidikan Tinggi</h1>
-        <p>
-            Manfaat, penggunaan, dan tantangan ChatGPT
-            dalam lingkungan pendidikan tinggi.
-        </p>
+    <!-- ============================================================
+         1. HEADER & NAVIGASI — FLEXBOX
+         Logo, menu, dan tombol aksi diatur dengan Flexbox
+         ============================================================ -->
+    <header class="site-header">
+        <nav class="navbar" aria-label="Navigasi utama">
+            <a class="logo" href="index.html">
+                <span class="logo-mark" aria-hidden="true">E</span>
+                EduAI Review
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active" aria-current="page">Beranda</a></li>
+                <li><a href="landing-page.html">Landing Page</a></li>
+                <li><a href="#fitur">Fitur</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+
+            <a class="btn btn-nav" href="landing-page.html">Baca Jurnal</a>
+        </nav>
     </header>
 
-    <!-- Navigation -->
-    <nav aria-label="Navigasi utama">
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#kekuatan">Kekuatan</a></li>
-            <li><a href="#kekurangan">Kekurangan</a></li>
-            <li><a href="#anggota">Anggota</a></li>
-            <li><a href="#sumber">Sumber</a></li>
-        </ul>
-    </nav>
-
-    <!-- Main Content -->
     <main>
 
-        <!-- About -->
-        <section id="about">
-            <h2>About / Ringkasan Jurnal</h2>
+        <!-- ============================================================
+             2. HERO SECTION — CSS GRID
+             Grid 2 kolom: teks (kiri) dan kartu statistik (kanan)
+             ============================================================ -->
+        <section class="hero" id="beranda">
+            <div class="hero-text">
+                <span class="badge">Kelompok 4 — Pemrograman Aplikasi Web</span>
 
-            <article>
-                <header>
-                    <h3>
-                        ChatGPT in the Higher Education:
-                        A Systematic Literature Review and Research Challenges
-                    </h3>
-                </header>
+                <h1>ChatGPT dalam Pendidikan Tinggi</h1>
 
                 <p>
-                    <strong>Penulis:</strong>
-                    Maria Ijaz Baig &amp; Elaheh Yadegaridehkordi
+                    Website kajian jurnal
+                    <em>“ChatGPT in the Higher Education: A Systematic
+                        Literature Review and Research Challenges”</em>
+                    yang merangkum manfaat, penggunaan, dan tantangan
+                    ChatGPT bagi mahasiswa, tenaga akademik, dan peneliti.
                 </p>
 
-                <p>
-                    <strong>Tahun Terbit:</strong> 2024
-                </p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="landing-page.html">Baca Landing Page</a>
+                    <a class="btn btn-outline" href="#fitur">Lihat Fitur</a>
+                </div>
+            </div>
 
-                <p>
-                    <strong>Jurnal:</strong>
-                    International Journal of Educational Research,
-                    Volume 127, Article 102411
-                </p>
+            <!-- Kartu statistik: grid bersarang di dalam kolom hero -->
+            <div class="hero-cards">
+                <div class="hero-card hero-card-wide">
+                    <span class="number">57</span>
+                    <span class="label">
+                        Artikel penelitian yang dianalisis dalam kajian
+                        systematic literature review ini.
+                    </span>
+                </div>
 
-                <p>
-                    Jurnal ini membahas perkembangan penggunaan ChatGPT
-                    dalam pendidikan tinggi melalui metode
-                    <em>systematic literature review</em>.
-                </p>
+                <div class="hero-card">
+                    <span class="number">2023–2024</span>
+                    <span class="label">Periode publikasi yang ditinjau</span>
+                </div>
 
-                <p>
-                    Penelitian ini menganalisis 57 artikel penelitian
-                    yang diterbitkan pada periode 2023–2024. Pembahasan
-                    mencakup tren penelitian, adopsi ChatGPT, berbagai
-                    penggunaan ChatGPT oleh mahasiswa, tenaga akademik,
-                    peneliti, serta tantangan dan peluang penelitian
-                    di masa mendatang.
-                </p>
-            </article>
-
-            <aside>
-                <h3>Informasi Tambahan</h3>
-
-                <p>
-                    Artikel ini merupakan penelitian
-                    <em>systematic literature review</em> yang memberikan
-                    gambaran mengenai perkembangan penelitian ChatGPT
-                    dalam pendidikan tinggi.
-                </p>
-            </aside>
+                <div class="hero-card">
+                    <span class="number">Vol. 127</span>
+                    <span class="label">Int. Journal of Educational Research</span>
+                </div>
+            </div>
         </section>
 
-        <!-- Kekuatan -->
-        <section id="kekuatan">
-            <h2>Kekuatan Jurnal</h2>
+        <!-- ============================================================
+             3. DAFTAR FITUR — CSS GRID
+             Susunan 6 kartu fitur dalam grid yang responsif
+             ============================================================ -->
+        <section class="features" id="fitur">
+            <div class="section-head">
+                <h2>Fitur Website</h2>
+                <p>Jelajahi bagian-bagian utama dari kajian jurnal kami.</p>
+            </div>
 
-            <article>
-                <h3>Kelebihan Penelitian</h3>
+            <div class="features-grid">
 
-                <ul>
-                    <li>
-                        Menggunakan metode
-                        <em>systematic literature review</em>.
-                    </li>
+                <article class="feature-card">
+                    <span class="feature-icon" aria-hidden="true">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                    </span>
+                    <h3>Ringkasan Jurnal</h3>
+                    <p>
+                        Ikhtisar penelitian Baig &amp; Yadegaridehkordi (2024)
+                        tentang adopsi ChatGPT di lingkungan pendidikan tinggi.
+                    </p>
+                    <a class="card-link" href="landing-page.html#about">Lihat ringkasan</a>
+                </article>
 
-                    <li>
-                        Menganalisis 57 artikel penelitian terkait
-                        ChatGPT dalam pendidikan tinggi.
-                    </li>
+                <article class="feature-card">
+                    <span class="feature-icon" aria-hidden="true">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </span>
+                    <h3>Kekuatan Penelitian</h3>
+                    <p>
+                        Metode systematic literature review dengan analisis
+                        57 artikel dari berbagai perspektif pengguna.
+                    </p>
+                    <a class="card-link" href="landing-page.html#kekuatan">Lihat kekuatan</a>
+                </article>
 
-                    <li>
-                        Membahas penggunaan ChatGPT dari berbagai
-                        perspektif, termasuk mahasiswa, akademisi,
-                        dan peneliti.
-                    </li>
+                <article class="feature-card">
+                    <span class="feature-icon" aria-hidden="true">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
+                            </path>
+                            <line x1="12" y1="9" x2="12" y2="13"></line>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                    </span>
+                    <h3>Kekurangan Penelitian</h3>
+                    <p>
+                        Keterbatasan literatur, cakupan periode penelitian,
+                        dan tantangan perkembangan AI yang sangat cepat.
+                    </p>
+                    <a class="card-link" href="landing-page.html#kekurangan">Lihat kekurangan</a>
+                </article>
 
-                    <li>
-                        Mengidentifikasi tren dan perkembangan penelitian
-                        ChatGPT dalam pendidikan tinggi.
-                    </li>
+                <article class="feature-card">
+                    <span class="feature-icon" aria-hidden="true">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                            <polyline points="17 6 23 6 23 12"></polyline>
+                        </svg>
+                    </span>
+                    <h3>Tren &amp; Peluang Riset</h3>
+                    <p>
+                        Gambaran tren penelitian ChatGPT serta arah
+                        dan peluang penelitian di masa mendatang.
+                    </p>
+                    <a class="card-link" href="landing-page.html#about">Baca selengkapnya</a>
+                </article>
 
-                    <li>
-                        Mengidentifikasi keterbatasan penelitian sebelumnya
-                        dan memberikan arah penelitian selanjutnya.
-                    </li>
-                </ul>
-            </article>
+                <article class="feature-card">
+                    <span class="feature-icon" aria-hidden="true">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </span>
+                    <h3>Anggota Kelompok</h3>
+                    <p>
+                        Tujuh mahasiswa Kelompok 4 yang menyusun
+                        kajian jurnal ini untuk mata kuliah PAW.
+                    </p>
+                    <a class="card-link" href="landing-page.html#anggota">Kenali kami</a>
+                </article>
+
+                <article class="feature-card">
+                    <span class="feature-icon" aria-hidden="true">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                        </svg>
+                    </span>
+                    <h3>Sumber &amp; Referensi</h3>
+                    <p>
+                        Sitasi resmi jurnal beserta tautan DOI dan
+                        artikel asli di ScienceDirect.
+                    </p>
+                    <a class="card-link" href="landing-page.html#sumber">Buka referensi</a>
+                </article>
+
+            </div>
         </section>
 
-        <!-- Kekurangan -->
-        <section id="kekurangan">
-            <h2>Kekurangan Jurnal</h2>
+        <!-- ============================================================
+             4. FORM & INPUT — Label jelas + focus state
+             ============================================================ -->
+        <section class="contact" id="kontak">
+            <div class="section-head" style="margin: 0 auto; text-align: center;">
+                <h2>Kirim Kritik &amp; Saran</h2>
+                <p>Masukan Anda membantu kami menyempurnakan website kajian ini.</p>
+            </div>
 
-            <article>
-                <h3>Keterbatasan Penelitian</h3>
+            <form class="form-card" action="#" method="post">
 
-                <ul>
-                    <li>
-                        Penelitian ChatGPT dalam pendidikan tinggi masih
-                        relatif baru sehingga literatur yang tersedia
-                        masih berkembang.
-                    </li>
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap <span class="required">*</span></label>
+                    <input type="text" id="nama" name="nama" placeholder="Contoh: Abi Nayana Faiq" required>
+                </div>
 
-                    <li>
-                        Review berfokus pada penelitian yang diterbitkan
-                        pada periode 2023 hingga awal 2024.
-                    </li>
+                <div class="form-group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="nama@contoh.ac.id" required>
+                </div>
 
-                    <li>
-                        Penelitian terdahulu yang dianalisis cukup banyak
-                        menggunakan metode survei.
-                    </li>
+                <div class="form-group">
+                    <label for="topik">Topik</label>
+                    <select id="topik" name="topik">
+                        <option value="pertanyaan">Pertanyaan seputar jurnal</option>
+                        <option value="kritik-saran">Kritik dan saran</option>
+                        <option value="kolaborasi">Ajakan kolaborasi</option>
+                        <option value="lainnya">Lainnya</option>
+                    </select>
+                </div>
 
-                    <li>
-                        Dampak penggunaan ChatGPT dalam jangka panjang
-                        masih membutuhkan penelitian lebih lanjut.
-                    </li>
+                <div class="form-group">
+                    <label for="pesan">Pesan <span class="required">*</span></label>
+                    <textarea id="pesan" name="pesan" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                </div>
 
-                    <li>
-                        Perkembangan teknologi AI yang cepat membuat
-                        hasil penelitian perlu terus diperbarui.
-                    </li>
-                </ul>
-            </article>
-        </section>
+                <div class="form-check">
+                    <input type="checkbox" id="setuju" name="setuju" required>
+                    <label for="setuju">
+                        Saya setuju data yang dikirim digunakan untuk
+                        keperluan evaluasi tugas mata kuliah PAW.
+                    </label>
+                </div>
 
-        <!-- Anggota -->
-        <section id="anggota">
-            <h2>Anggota Kelompok</h2>
+                <button type="submit" class="btn btn-primary btn-submit">Kirim Pesan</button>
 
-            <article>
-                <ol>
-                    <li>
-                        <strong>Abi Nayana Faiq</strong>
-                        — NIM: 20240140036
-                    </li>
-
-                    <li>
-                        <strong>Marchdilo Kemal Hakim</strong>
-                        — NIM: 20240140041
-                    </li>
-
-                    <li>
-                        <strong>Khoirul Arif Pratama</strong>
-                        — NIM: 2024014001
-                    </li>
-
-                    <li>
-                        <strong>Muhammad Zaki Andika</strong>
-                        — NIM: 20240140048
-                    </li>
-                    <li>
-                        <strong>Bima Baraja</strong>
-                        — NIM: 20240140015
-                    </li>
-                    <li>
-                        <strong>Pasya Achmadinedja Maulana</strong>
-                        — NIM: 20240140035
-                    </li>
-                    <li>
-                        <strong>Rafi Arif Nugroho</strong>
-                        — NIM: 20240140007
-                    </li>
-                </ol>
-            </article>
-        </section>
-
-        <!-- Sumber -->
-        <section id="sumber">
-            <h2>Sumber Jurnal</h2>
-
-            <article>
-                <h3>Referensi Utama</h3>
-
-                <p>
-                    Baig, M. I., &amp; Yadegaridehkordi, E. (2024).
-                    <em>
-                        ChatGPT in the higher education:
-                        A systematic literature review and research challenges.
-                    </em>
-                    International Journal of Educational Research,
-                    127, 102411.
-                </p>
-
-                <p>
-                    DOI:
-                    <a href="https://doi.org/10.1016/j.ijer.2024.102411" target="_blank" rel="noopener noreferrer">
-                        https://doi.org/10.1016/j.ijer.2024.102411
-                    </a>
-                </p>
-
-                <p>
-                    <a href="https://www.sciencedirect.com/science/article/pii/S0883035524000971" target="_blank"
-                        rel="noopener noreferrer">
-                        Buka artikel di ScienceDirect
-                    </a>
-                </p>
-            </article>
+                <p class="form-note">Kolom bertanda <span class="required">*</span> wajib diisi.</p>
+            </form>
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>
-            &copy; 2026 Kelompok 4 -
-            PAW Week 2
-        </p>
+    <!-- Footer — Flexbox -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>&copy; 2026 Kelompok 4 — PAW Week 3. Homepage &amp; Landing Page Jurnal.</p>
 
-        <p>
-            Landing Page Jurnal ChatGPT dalam Pendidikan Tinggi
-        </p>
+            <ul class="footer-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="landing-page.html">Landing Page</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </div>
     </footer>
 
 </body>

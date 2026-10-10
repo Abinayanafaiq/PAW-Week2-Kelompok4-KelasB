@@ -1,0 +1,585 @@
+/* ============================================================
+   style.css — Homepage EduAI Review (Tugas PAW Week 3)
+   Ketentuan yang diterapkan:
+   1. Header & Navigasi  -> Flexbox
+   2. Hero Section       -> CSS Grid
+   3. Daftar Fitur       -> CSS Grid
+   4. Form & Input       -> Label jelas + focus state
+   5. Media Query        -> Breakpoint tablet & mobile
+   6. Layout Mobile      -> Satu kolom
+   ============================================================ */
+
+/* ---------- Reset & Variabel Warna ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --navy-dark: #16304f;
+    --navy: #1e3a5f;
+    --navy-mid: #2c5282;
+    --blue: #2b6cb0;
+    --blue-light: #90cdf4;
+    --bg: #f4f6f9;
+    --surface: #ffffff;
+    --text: #2d3748;
+    --text-muted: #4a5568;
+    --border: #e2e8f0;
+    --radius: 10px;
+    --shadow: 0 2px 8px rgba(22, 48, 79, 0.08);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--bg);
+}
+
+/* ---------- Tombol ---------- */
+.btn {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font: inherit;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease,
+        border-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--blue);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: var(--navy-mid);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--blue);
+    border: 2px solid var(--blue);
+}
+
+.btn-outline:hover {
+    background-color: var(--blue);
+    color: #ffffff;
+}
+
+.btn:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--blue-light);
+    outline-offset: 2px;
+}
+
+/* ============================================================
+   1. HEADER & NAVIGASI — FLEXBOX
+   Logo di kiri, menu di tengah, tombol aksi di kanan
+   ============================================================ */
+.site-header {
+    background-color: var(--navy-dark);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0.85rem 1.5rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.logo-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--blue), var(--blue-light));
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    list-style: none;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 0.5rem 0.9rem;
+    border-radius: 6px;
+    color: #cbd5e0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-menu a:hover {
+    background-color: var(--navy-mid);
+    color: #ffffff;
+}
+
+.nav-menu a.active {
+    background-color: var(--navy-mid);
+    color: #ffffff;
+}
+
+.btn-nav {
+    padding: 0.5rem 1.1rem;
+    background-color: var(--blue);
+    color: #ffffff;
+    font-size: 0.95rem;
+    border-radius: 6px;
+}
+
+.btn-nav:hover {
+    background-color: var(--blue-light);
+    color: var(--navy-dark);
+}
+
+/* ============================================================
+   2. HERO SECTION — CSS GRID
+   Kolom kiri: teks. Kolom kanan: kartu statistik.
+   ============================================================ */
+.hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2.5rem;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem;
+}
+
+.badge {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.3rem 0.85rem;
+    border-radius: 999px;
+    background-color: #e3edf7;
+    color: var(--navy-mid);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.hero-text h1 {
+    margin-bottom: 1rem;
+    color: var(--navy);
+    font-size: 2.6rem;
+    line-height: 1.2;
+}
+
+.hero-text p {
+    max-width: 34rem;
+    margin-bottom: 1.75rem;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+/* Kartu statistik di dalam hero (Grid bersarang) */
+.hero-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.hero-card {
+    padding: 1.4rem 1.5rem;
+    background-color: var(--surface);
+    border-top: 3px solid var(--blue);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.hero-card-wide {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+    border-top-color: var(--blue-light);
+    color: #ffffff;
+}
+
+.hero-card .number {
+    display: block;
+    color: var(--navy-mid);
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.hero-card-wide .number {
+    color: var(--blue-light);
+    font-size: 3rem;
+}
+
+.hero-card .label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.hero-card-wide .label {
+    color: #cbd5e0;
+}
+
+/* ---------- Judul Section ---------- */
+.section-head {
+    max-width: 40rem;
+}
+
+.section-head h2 {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--blue);
+    display: inline-block;
+    color: var(--navy);
+    font-size: 1.8rem;
+}
+
+.section-head p {
+    color: var(--text-muted);
+}
+
+/* ============================================================
+   3. DAFTAR FITUR — CSS GRID
+   3 kolom di desktop, mengecil sesuai ukuran layar
+   ============================================================ */
+.features {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem 3.5rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 1.75rem;
+}
+
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1.6rem;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(22, 48, 79, 0.12);
+}
+
+.feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background-color: #e3edf7;
+    color: var(--navy-mid);
+}
+
+.feature-card h3 {
+    color: var(--navy);
+    font-size: 1.1rem;
+}
+
+.feature-card p {
+    flex-grow: 1;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.card-link {
+    margin-top: 0.5rem;
+    color: var(--blue);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.card-link:hover {
+    color: var(--navy);
+    text-decoration: underline;
+}
+
+/* ============================================================
+   4. FORM & INPUT — Label jelas + focus state
+   ============================================================ */
+.contact {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem 3.5rem;
+}
+
+.form-card {
+    max-width: 640px;
+    margin: 1.75rem auto 0;
+    padding: 2rem 2.25rem;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.1rem;
+}
+
+.form-group label {
+    margin-bottom: 0.4rem;
+    color: var(--navy);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.required {
+    color: #c53030;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    border: 1.5px solid var(--border);
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: var(--text);
+    font: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.form-group ::placeholder {
+    color: #a0aec0;
+}
+
+/* Focus state: field aktif mendapat bingkai biru */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--blue);
+    background-color: #fbfdff;
+    box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.18);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+}
+
+.form-check input {
+    width: 1rem;
+    height: 1rem;
+    margin-top: 0.35rem;
+    accent-color: var(--blue);
+}
+
+.form-check label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.btn-submit {
+    width: 100%;
+}
+
+.form-note {
+    margin-top: 0.75rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+/* ---------- Footer — Flexbox ---------- */
+.site-footer {
+    background-color: var(--navy-dark);
+    color: #cbd5e0;
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.75rem 1.5rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.25rem;
+    list-style: none;
+}
+
+.footer-links a {
+    color: #cbd5e0;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* ============================================================
+   5 & 6. MEDIA QUERY — Tampilan responsif
+   ============================================================ */
+
+/* Tablet (<= 992px): fitur menjadi 2 kolom */
+@media (max-width: 992px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        gap: 1.75rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+}
+
+/* Mobile (<= 768px): SELURUH layout menjadi SATU KOLOM */
+@media (max-width: 768px) {
+
+    /* Navigasi ditumpuk vertikal */
+    .navbar {
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 1rem;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-menu li,
+    .nav-menu a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .btn-nav {
+        width: 100%;
+    }
+
+    /* Hero: teks dan kartu menjadi satu kolom */
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+        padding: 2.25rem 1.25rem;
+    }
+
+    .hero-text h1 {
+        font-size: 1.9rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .hero-cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* Fitur menjadi satu kolom */
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-card {
+        padding: 1.5rem;
+    }
+
+    /* Footer ditumpuk ke tengah */
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Mobile kecil (<= 480px) */
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 1.65rem;
+    }
+
+    .hero-card .number {
+        font-size: 1.8rem;
+    }
+
+    .hero-card-wide .number {
+        font-size: 2.4rem;
+    }
+
+    .section-head h2 {
+        font-size: 1.5rem;
+    }
+}
